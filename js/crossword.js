@@ -308,6 +308,7 @@ function sanitize(str) {
 function tryBuildPuzzle(sourcePuzzle, chosenSize) {
   const puzzle = clonePuzzle(sourcePuzzle);
   const size = chosenSize;
+
   const grid = Array.from({ length: size }, () =>
     Array.from({ length: size }, () => null)
   );
@@ -319,17 +320,17 @@ function tryBuildPuzzle(sourcePuzzle, chosenSize) {
     w.answer = answer;
     w.cells = [];
 
-    if (w.row >= size || w.col >= size) return null;
-    if (w.dir === "across" && w.col + len > size) return null;
-    if (w.dir === "down" && w.row + len > size) return null;
+    if (w.row >= size || w.col >= size) continue;
+    if (w.dir === "across" && w.col + len > size) continue;
+    if (w.dir === "down" && w.row + len > size) continue;
 
     for (let j = 0; j < len; j++) {
       const r = w.row + (w.dir === "down" ? j : 0);
       const c = w.col + (w.dir === "across" ? j : 0);
 
-      if (grid[r][c] && grid[r][c] !== answer[j]) return null;
-
+      // 💥 IMPORTANT : on remplace au lieu de bloquer
       grid[r][c] = answer[j];
+
       w.cells.push({ r, c });
     }
   }

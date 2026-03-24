@@ -1,3 +1,4 @@
+// ================= STATE =================
 const crosswordState = {
   puzzle: null,
   cells: [],
@@ -6,108 +7,114 @@ const crosswordState = {
   solved: false
 };
 
+// ================= BANK =================
 const crosswordBank = {
   informatique: {
     facile: [
       {
-        title: 'Infos facile 8 A',
+        title: "Informatique facile 8x8 A",
         size: 8,
         words: [
-          { answer: 'SOURIS', clue: 'Périphérique pour cliquer', row: 0, col: 1, dir: 'across' },
-          { answer: 'USB', clue: 'Type de port courant', row: 2, col: 0, dir: 'down' },
-          { answer: 'WEB', clue: 'Réseau de pages', row: 4, col: 2, dir: 'across' },
-          { answer: 'MAIL', clue: 'Message électronique', row: 1, col: 5, dir: 'down' },
-          { answer: 'PIXEL', clue: 'Plus petite unité d’une image numérique', row: 6, col: 1, dir: 'across' }
+          { answer: "SOURIS", clue: "Périphérique pour cliquer", row: 0, col: 1, dir: "across" },
+          { answer: "USB", clue: "Type de port courant", row: 2, col: 0, dir: "down" },
+          { answer: "WEB", clue: "Réseau de pages", row: 4, col: 2, dir: "across" },
+          { answer: "MAIL", clue: "Message électronique", row: 1, col: 5, dir: "down" },
+          { answer: "PIXEL", clue: "Plus petite unité d’une image numérique", row: 6, col: 1, dir: "across" }
         ]
       },
       {
-        title: 'Infos facile 10 A',
+        title: "Informatique facile 8x8 B",
+        size: 8,
+        words: [
+          { answer: "ECRAN", clue: "Affiche l’image", row: 0, col: 0, dir: "across" },
+          { answer: "WIFI", clue: "Connexion sans fil", row: 0, col: 2, dir: "down" },
+          { answer: "CLIC", clue: "Action de souris", row: 3, col: 3, dir: "across" },
+          { answer: "CODE", clue: "Texte écrit par un développeur", row: 1, col: 6, dir: "down" },
+          { answer: "JEU", clue: "Application ludique", row: 6, col: 4, dir: "across" }
+        ]
+      },
+      {
+        title: "Informatique facile 10x10 A",
         size: 10,
         words: [
-          { answer: 'CLAVIER', clue: 'Périphérique pour écrire', row: 0, col: 1, dir: 'across' },
-          { answer: 'RAM', clue: 'Mémoire vive', row: 0, col: 3, dir: 'down' },
-          { answer: 'BUG', clue: 'Erreur dans un programme', row: 3, col: 2, dir: 'across' },
-          { answer: 'SITE', clue: 'Ensemble de pages web', row: 6, col: 2, dir: 'across' },
-          { answer: 'APP', clue: 'Application', row: 2, col: 7, dir: 'down' },
-          { answer: 'CODE', clue: 'Texte écrit par le développeur', row: 8, col: 1, dir: 'across' }
+          { answer: "CLAVIER", clue: "Périphérique pour écrire", row: 0, col: 1, dir: "across" },
+          { answer: "RAM", clue: "Mémoire vive", row: 0, col: 3, dir: "down" },
+          { answer: "SITE", clue: "Ensemble de pages web", row: 3, col: 2, dir: "across" },
+          { answer: "BUG", clue: "Erreur dans un programme", row: 1, col: 7, dir: "down" },
+          { answer: "APP", clue: "Application", row: 6, col: 3, dir: "across" },
+          { answer: "PC", clue: "Ordinateur personnel", row: 4, col: 9, dir: "down" }
         ]
       },
       {
-        title: 'Infos facile 12 A',
+        title: "Informatique facile 12x12 A",
         size: 12,
         words: [
-          { answer: 'ECRAN', clue: 'Affiche l’image', row: 0, col: 1, dir: 'across' },
-          { answer: 'WIFI', clue: 'Connexion sans fil', row: 0, col: 3, dir: 'down' },
-          { answer: 'CLIC', clue: 'Action de souris', row: 4, col: 2, dir: 'across' },
-          { answer: 'JEU', clue: 'Application ludique', row: 7, col: 4, dir: 'across' },
-          { answer: 'DATA', clue: 'Données en anglais', row: 2, col: 8, dir: 'down' },
-          { answer: 'PIXEL', clue: 'Unité d’image', row: 10, col: 2, dir: 'across' }
+          { answer: "SOURIS", clue: "On clique avec", row: 0, col: 1, dir: "across" },
+          { answer: "USB", clue: "Port très courant", row: 2, col: 0, dir: "down" },
+          { answer: "WEB", clue: "Internet côté pages", row: 4, col: 2, dir: "across" },
+          { answer: "MAIL", clue: "Courrier électronique", row: 1, col: 5, dir: "down" },
+          { answer: "PIXEL", clue: "Élément d’une image", row: 6, col: 1, dir: "across" },
+          { answer: "CLAVIER", clue: "Pour taper du texte", row: 8, col: 2, dir: "across" }
         ]
       }
     ],
     moyen: [
       {
-        title: 'Infos moyen 8 A',
-        size: 8,
-        words: [
-          { answer: 'CACHE', clue: 'Mémoire temporaire', row: 0, col: 1, dir: 'across' },
-          { answer: 'API', clue: 'Interface de communication', row: 0, col: 3, dir: 'down' },
-          { answer: 'CSS', clue: 'Langage de style', row: 3, col: 2, dir: 'across' },
-          { answer: 'BOT', clue: 'Programme automatisé', row: 5, col: 1, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Infos moyen 10 A',
+        title: "Informatique moyen 10x10 A",
         size: 10,
         words: [
-          { answer: 'SERVEUR', clue: 'Machine qui héberge des données', row: 0, col: 1, dir: 'across' },
-          { answer: 'HTML', clue: 'Langage de structure web', row: 0, col: 3, dir: 'down' },
-          { answer: 'CSS', clue: 'Langage de style web', row: 3, col: 2, dir: 'across' },
-          { answer: 'API', clue: 'Interface pour un service', row: 1, col: 7, dir: 'down' },
-          { answer: 'CACHE', clue: 'Mémoire temporaire', row: 6, col: 1, dir: 'across' }
+          { answer: "SERVEUR", clue: "Machine qui héberge des données", row: 0, col: 1, dir: "across" },
+          { answer: "HTML", clue: "Langage de structure web", row: 0, col: 3, dir: "down" },
+          { answer: "CSS", clue: "Langage de style web", row: 3, col: 2, dir: "across" },
+          { answer: "API", clue: "Interface entre services", row: 1, col: 7, dir: "down" },
+          { answer: "CACHE", clue: "Mémoire temporaire", row: 6, col: 1, dir: "across" }
         ]
       },
       {
-        title: 'Infos moyen 12 A',
+        title: "Informatique moyen 10x10 B",
+        size: 10,
+        words: [
+          { answer: "LOGICIEL", clue: "Programme installé sur un ordinateur", row: 0, col: 1, dir: "across" },
+          { answer: "LINUX", clue: "Système d’exploitation libre", row: 0, col: 4, dir: "down" },
+          { answer: "RESEAU", clue: "Ensemble d’appareils connectés", row: 3, col: 0, dir: "across" },
+          { answer: "GPU", clue: "Processeur graphique", row: 1, col: 8, dir: "down" },
+          { answer: "PORT", clue: "Canal de communication", row: 6, col: 2, dir: "across" }
+        ]
+      },
+      {
+        title: "Informatique moyen 12x12 A",
         size: 12,
         words: [
-          { answer: 'LOGICIEL', clue: 'Programme installé', row: 0, col: 1, dir: 'across' },
-          { answer: 'LINUX', clue: 'Système libre', row: 0, col: 4, dir: 'down' },
-          { answer: 'RESEAU', clue: 'Ensemble d’appareils connectés', row: 4, col: 1, dir: 'across' },
-          { answer: 'GPU', clue: 'Processeur graphique', row: 1, col: 8, dir: 'down' },
-          { answer: 'PORT', clue: 'Canal de communication', row: 8, col: 2, dir: 'across' },
-          { answer: 'FICHIER', clue: 'Document enregistré', row: 10, col: 1, dir: 'across' }
+          { answer: "NAVIGATEUR", clue: "Programme pour aller sur internet", row: 0, col: 1, dir: "across" },
+          { answer: "HTML", clue: "Langage de structure", row: 0, col: 4, dir: "down" },
+          { answer: "DONNEE", clue: "Data en français", row: 3, col: 2, dir: "across" },
+          { answer: "CLOUD", clue: "Stockage distant", row: 1, col: 8, dir: "down" },
+          { answer: "SCRIPT", clue: "Suite d’instructions", row: 6, col: 1, dir: "across" },
+          { answer: "BOT", clue: "Programme automatisé", row: 4, col: 10, dir: "down" }
         ]
       }
     ],
     difficile: [
       {
-        title: 'Infos difficile 8 A',
-        size: 8,
-        words: [
-          { answer: 'PATCH', clue: 'Mise à jour corrective', row: 0, col: 1, dir: 'across' },
-          { answer: 'SQL', clue: 'Langage de base de données', row: 0, col: 3, dir: 'down' },
-          { answer: 'NODE', clue: 'Environnement JavaScript', row: 4, col: 1, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Infos difficile 10 A',
-        size: 10,
-        words: [
-          { answer: 'ALGORITHME', clue: 'Suite d’étapes pour résoudre un problème', row: 0, col: 0, dir: 'across' },
-          { answer: 'PYTHON', clue: 'Langage très utilisé', row: 0, col: 4, dir: 'down' },
-          { answer: 'PATCH', clue: 'Mise à jour corrective', row: 7, col: 2, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Infos difficile 12 A',
+        title: "Informatique difficile 12x12 A",
         size: 12,
         words: [
-          { answer: 'ALGORITHME', clue: 'Suite d’étapes pour résoudre un problème', row: 0, col: 1, dir: 'across' },
-          { answer: 'PYTHON', clue: 'Langage très utilisé', row: 0, col: 4, dir: 'down' },
-          { answer: 'VARIABLE', clue: 'Zone mémoire nommée', row: 4, col: 1, dir: 'across' },
-          { answer: 'SQL', clue: 'Langage de base de données', row: 2, col: 9, dir: 'down' },
-          { answer: 'PATCH', clue: 'Mise à jour corrective', row: 9, col: 3, dir: 'across' }
+          { answer: "ALGORITHME", clue: "Suite d’étapes pour résoudre un problème", row: 0, col: 1, dir: "across" },
+          { answer: "PYTHON", clue: "Langage de programmation très utilisé", row: 0, col: 4, dir: "down" },
+          { answer: "VARIABLE", clue: "Zone mémoire nommée", row: 3, col: 1, dir: "across" },
+          { answer: "SQL", clue: "Langage de base de données", row: 2, col: 9, dir: "down" },
+          { answer: "PATCH", clue: "Mise à jour corrective", row: 8, col: 3, dir: "across" }
+        ]
+      },
+      {
+        title: "Informatique difficile 12x12 B",
+        size: 12,
+        words: [
+          { answer: "FRAMEWORK", clue: "Base de travail pour développer", row: 0, col: 1, dir: "across" },
+          { answer: "KERNEL", clue: "Cœur d’un système", row: 0, col: 5, dir: "down" },
+          { answer: "SECURITE", clue: "Protection contre les attaques", row: 3, col: 1, dir: "across" },
+          { answer: "NODE", clue: "Environnement JavaScript serveur", row: 2, col: 9, dir: "down" },
+          { answer: "COMPILER", clue: "Transformer du code source", row: 8, col: 2, dir: "across" }
         ]
       }
     ]
@@ -116,100 +123,85 @@ const crosswordBank = {
   culture: {
     facile: [
       {
-        title: 'Culture facile 8 A',
+        title: "Culture facile 8x8 A",
         size: 8,
         words: [
-          { answer: 'PARIS', clue: 'Capitale de la France', row: 0, col: 1, dir: 'across' },
-          { answer: 'ART', clue: 'Peinture, musique, sculpture…', row: 0, col: 3, dir: 'down' },
-          { answer: 'LUNE', clue: 'Satellite naturel de la Terre', row: 3, col: 2, dir: 'across' },
-          { answer: 'MER', clue: 'Grande étendue d’eau salée', row: 1, col: 6, dir: 'down' },
-          { answer: 'ROME', clue: 'Capitale de l’Italie', row: 6, col: 1, dir: 'across' }
+          { answer: "PARIS", clue: "Capitale de la France", row: 0, col: 1, dir: "across" },
+          { answer: "ART", clue: "Peinture, musique, sculpture…", row: 0, col: 3, dir: "down" },
+          { answer: "LUNE", clue: "Satellite naturel de la Terre", row: 3, col: 2, dir: "across" },
+          { answer: "MER", clue: "Grande étendue d’eau salée", row: 1, col: 6, dir: "down" },
+          { answer: "ROME", clue: "Capitale de l’Italie", row: 6, col: 1, dir: "across" }
         ]
       },
       {
-        title: 'Culture facile 10 A',
+        title: "Culture facile 10x10 A",
         size: 10,
         words: [
-          { answer: 'AFRIQUE', clue: 'Continent', row: 0, col: 1, dir: 'across' },
-          { answer: 'RIO', clue: 'Ville du Brésil', row: 0, col: 4, dir: 'down' },
-          { answer: 'SOLEIL', clue: 'Étoile du système solaire', row: 4, col: 1, dir: 'across' },
-          { answer: 'EAU', clue: 'Liquide vital', row: 2, col: 7, dir: 'down' },
-          { answer: 'OPERA', clue: 'Spectacle musical', row: 8, col: 2, dir: 'across' }
+          { answer: "AFRIQUE", clue: "Continent", row: 0, col: 1, dir: "across" },
+          { answer: "RIO", clue: "Ville du Brésil", row: 0, col: 4, dir: "down" },
+          { answer: "SOLEIL", clue: "Étoile du système solaire", row: 3, col: 1, dir: "across" },
+          { answer: "EAU", clue: "Liquide vital", row: 2, col: 7, dir: "down" },
+          { answer: "OPERA", clue: "Spectacle musical", row: 6, col: 2, dir: "across" }
         ]
       },
       {
-        title: 'Culture facile 12 A',
+        title: "Culture facile 12x12 A",
         size: 12,
         words: [
-          { answer: 'BELGIQUE', clue: 'Pays de Bruxelles', row: 0, col: 1, dir: 'across' },
-          { answer: 'JAZZ', clue: 'Genre musical', row: 0, col: 3, dir: 'down' },
-          { answer: 'LIVRE', clue: 'Objet qu’on lit', row: 4, col: 2, dir: 'across' },
-          { answer: 'THE', clue: 'Boisson chaude', row: 2, col: 8, dir: 'down' },
-          { answer: 'OR', clue: 'Métal précieux', row: 9, col: 4, dir: 'across' }
+          { answer: "BELGIQUE", clue: "Pays de Bruxelles", row: 0, col: 1, dir: "across" },
+          { answer: "JAZZ", clue: "Genre musical", row: 0, col: 3, dir: "down" },
+          { answer: "LIVRE", clue: "Objet qu’on lit", row: 3, col: 2, dir: "across" },
+          { answer: "THE", clue: "Boisson chaude", row: 2, col: 8, dir: "down" },
+          { answer: "OR", clue: "Métal précieux", row: 6, col: 5, dir: "across" },
+          { answer: "ART", clue: "Expression créative", row: 8, col: 1, dir: "across" }
         ]
       }
     ],
     moyen: [
       {
-        title: 'Culture moyen 8 A',
-        size: 8,
-        words: [
-          { answer: 'NIL', clue: 'Long fleuve africain', row: 0, col: 1, dir: 'across' },
-          { answer: 'ZEUS', clue: 'Dieu grec', row: 0, col: 2, dir: 'down' },
-          { answer: 'VIOLON', clue: 'Instrument à cordes', row: 4, col: 1, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Culture moyen 10 A',
+        title: "Culture moyen 10x10 A",
         size: 10,
         words: [
-          { answer: 'EVEREST', clue: 'Plus haut sommet du monde', row: 0, col: 1, dir: 'across' },
-          { answer: 'JAPON', clue: 'Pays de Tokyo', row: 0, col: 3, dir: 'down' },
-          { answer: 'NIL', clue: 'Long fleuve africain', row: 3, col: 1, dir: 'across' },
-          { answer: 'ORION', clue: 'Constellation célèbre', row: 2, col: 8, dir: 'down' },
-          { answer: 'THEATRE', clue: 'Art de la scène', row: 6, col: 1, dir: 'across' }
+          { answer: "EVEREST", clue: "Plus haut sommet du monde", row: 0, col: 1, dir: "across" },
+          { answer: "JAPON", clue: "Pays de Tokyo", row: 0, col: 3, dir: "down" },
+          { answer: "NIL", clue: "Long fleuve africain", row: 3, col: 1, dir: "across" },
+          { answer: "ORION", clue: "Constellation célèbre", row: 2, col: 8, dir: "down" },
+          { answer: "THEATRE", clue: "Art de la scène", row: 6, col: 1, dir: "across" }
         ]
       },
       {
-        title: 'Culture moyen 12 A',
+        title: "Culture moyen 12x12 A",
         size: 12,
         words: [
-          { answer: 'PYRAMIDE', clue: 'Monument d’Égypte', row: 0, col: 1, dir: 'across' },
-          { answer: 'ASIE', clue: 'Continent', row: 0, col: 2, dir: 'down' },
-          { answer: 'TANGO', clue: 'Danse argentine', row: 4, col: 2, dir: 'across' },
-          { answer: 'NORD', clue: 'Point cardinal', row: 3, col: 9, dir: 'down' },
-          { answer: 'GEOGRAPHIE', clue: 'Étude des territoires', row: 8, col: 1, dir: 'across' }
+          { answer: "RENAISSANCE", clue: "Grand mouvement artistique européen", row: 0, col: 0, dir: "across" },
+          { answer: "MUSEE", clue: "Lieu d’exposition", row: 0, col: 5, dir: "down" },
+          { answer: "SAHARA", clue: "Grand désert africain", row: 3, col: 1, dir: "across" },
+          { answer: "VIOLON", clue: "Instrument à cordes", row: 6, col: 2, dir: "across" },
+          { answer: "ZEUS", clue: "Dieu grec", row: 2, col: 9, dir: "down" }
         ]
       }
     ],
     difficile: [
       {
-        title: 'Culture difficile 8 A',
-        size: 8,
-        words: [
-          { answer: 'OPERA', clue: 'Art lyrique', row: 0, col: 1, dir: 'across' },
-          { answer: 'ATLAS', clue: 'Livre de cartes', row: 0, col: 3, dir: 'down' },
-          { answer: 'JAZZ', clue: 'Musique improvisée', row: 4, col: 2, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Culture difficile 10 A',
-        size: 10,
-        words: [
-          { answer: 'ASTRONOMIE', clue: 'Science des astres', row: 0, col: 0, dir: 'across' },
-          { answer: 'GALILEE', clue: 'Savant italien', row: 0, col: 5, dir: 'down' },
-          { answer: 'HISTOIRE', clue: 'Étude du passé', row: 6, col: 1, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Culture difficile 12 A',
+        title: "Culture difficile 12x12 A",
         size: 12,
         words: [
-          { answer: 'ASTRONOMIE', clue: 'Science des astres', row: 0, col: 1, dir: 'across' },
-          { answer: 'GALILEE', clue: 'Savant italien', row: 0, col: 5, dir: 'down' },
-          { answer: 'HISTOIRE', clue: 'Étude du passé', row: 4, col: 1, dir: 'across' },
-          { answer: 'OPERA', clue: 'Art lyrique', row: 3, col: 9, dir: 'down' },
-          { answer: 'SCULPTURE', clue: 'Art de modeler la matière', row: 8, col: 1, dir: 'across' }
+          { answer: "ASTRONOMIE", clue: "Science des astres", row: 0, col: 1, dir: "across" },
+          { answer: "GALILEE", clue: "Savant italien", row: 0, col: 5, dir: "down" },
+          { answer: "HISTOIRE", clue: "Étude du passé", row: 4, col: 1, dir: "across" },
+          { answer: "OPERA", clue: "Art lyrique", row: 3, col: 9, dir: "down" },
+          { answer: "SCULPTURE", clue: "Art de modeler la matière", row: 8, col: 1, dir: "across" }
+        ]
+      },
+      {
+        title: "Culture difficile 12x12 B",
+        size: 12,
+        words: [
+          { answer: "ARCHEOLOGIE", clue: "Science des civilisations anciennes", row: 0, col: 0, dir: "across" },
+          { answer: "ATLAS", clue: "Livre de cartes", row: 0, col: 6, dir: "down" },
+          { answer: "MYTHOLOGIE", clue: "Récits des dieux antiques", row: 3, col: 1, dir: "across" },
+          { answer: "BAROQUE", clue: "Style artistique", row: 2, col: 10, dir: "down" },
+          { answer: "DYNASTIE", clue: "Suite de souverains", row: 8, col: 2, dir: "across" }
         ]
       }
     ]
@@ -218,120 +210,107 @@ const crosswordBank = {
   cinema: {
     facile: [
       {
-        title: 'Cinéma facile 8 A',
+        title: "Cinéma facile 8x8 A",
         size: 8,
         words: [
-          { answer: 'FILM', clue: 'Œuvre projetée au cinéma', row: 0, col: 1, dir: 'across' },
-          { answer: 'SON', clue: 'Partie audio', row: 0, col: 3, dir: 'down' },
-          { answer: 'ACTEUR', clue: 'Personne qui joue un rôle', row: 3, col: 1, dir: 'across' },
-          { answer: 'STAR', clue: 'Vedette', row: 6, col: 2, dir: 'across' }
+          { answer: "FILM", clue: "Œuvre projetée au cinéma", row: 0, col: 1, dir: "across" },
+          { answer: "SON", clue: "Partie audio", row: 0, col: 3, dir: "down" },
+          { answer: "ACTEUR", clue: "Personne qui joue un rôle", row: 3, col: 1, dir: "across" },
+          { answer: "STAR", clue: "Vedette", row: 6, col: 2, dir: "across" }
         ]
       },
       {
-        title: 'Cinéma facile 10 A',
+        title: "Cinéma facile 10x10 A",
         size: 10,
         words: [
-          { answer: 'ECRAN', clue: 'Surface de projection', row: 0, col: 1, dir: 'across' },
-          { answer: 'DVD', clue: 'Ancien support vidéo', row: 0, col: 2, dir: 'down' },
-          { answer: 'ROLE', clue: 'Personnage joué', row: 4, col: 2, dir: 'across' },
-          { answer: 'ART', clue: 'Le cinéma en est un', row: 1, col: 7, dir: 'down' },
-          { answer: 'RIRE', clue: 'Réaction à une comédie', row: 8, col: 1, dir: 'across' }
+          { answer: "ECRAN", clue: "Surface de projection", row: 0, col: 1, dir: "across" },
+          { answer: "ROLE", clue: "Personnage joué", row: 3, col: 2, dir: "across" },
+          { answer: "OSCAR", clue: "Grande récompense américaine", row: 0, col: 5, dir: "down" },
+          { answer: "RIRE", clue: "Réaction à une comédie", row: 6, col: 1, dir: "across" },
+          { answer: "ART", clue: "Le cinéma en est un", row: 1, col: 8, dir: "down" }
         ]
       },
       {
-        title: 'Cinéma facile 12 A',
+        title: "Cinéma facile 12x12 A",
         size: 12,
         words: [
-          { answer: 'SCENE', clue: 'Partie d’un film', row: 0, col: 1, dir: 'across' },
-          { answer: 'OSCAR', clue: 'Grande récompense américaine', row: 0, col: 4, dir: 'down' },
-          { answer: 'GENRE', clue: 'Comédie, action, horreur…', row: 4, col: 2, dir: 'across' },
-          { answer: 'VU', clue: 'Déjà regardé', row: 2, col: 8, dir: 'down' },
-          { answer: 'FILM', clue: 'Œuvre de cinéma', row: 9, col: 3, dir: 'across' }
+          { answer: "SCENE", clue: "Partie d’un film", row: 0, col: 1, dir: "across" },
+          { answer: "GENRE", clue: "Comédie, horreur, action...", row: 3, col: 2, dir: "across" },
+          { answer: "SON", clue: "Partie audio", row: 0, col: 5, dir: "down" },
+          { answer: "STAR", clue: "Vedette", row: 6, col: 1, dir: "across" },
+          { answer: "FILM", clue: "Œuvre projetée", row: 8, col: 2, dir: "across" }
         ]
       }
     ],
     moyen: [
       {
-        title: 'Cinéma moyen 8 A',
-        size: 8,
-        words: [
-          { answer: 'IMAX', clue: 'Format de salle géante', row: 0, col: 1, dir: 'across' },
-          { answer: 'FX', clue: 'Abréviation effets spéciaux', row: 0, col: 2, dir: 'down' },
-          { answer: 'ANIME', clue: 'Film japonais d’animation', row: 4, col: 1, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Cinéma moyen 10 A',
+        title: "Cinéma moyen 10x10 A",
         size: 10,
         words: [
-          { answer: 'MONTAGE', clue: 'Assemblage des plans', row: 0, col: 1, dir: 'across' },
-          { answer: 'TRAILER', clue: 'Bande-annonce', row: 0, col: 4, dir: 'down' },
-          { answer: 'PLATEAU', clue: 'Lieu de tournage', row: 3, col: 1, dir: 'across' },
-          { answer: 'IMAX', clue: 'Format de salle géante', row: 2, col: 8, dir: 'down' },
-          { answer: 'COMEDIE', clue: 'Genre drôle', row: 6, col: 1, dir: 'across' }
+          { answer: "MONTAGE", clue: "Assemblage des plans", row: 0, col: 1, dir: "across" },
+          { answer: "TRAILER", clue: "Bande-annonce", row: 0, col: 4, dir: "down" },
+          { answer: "PLATEAU", clue: "Lieu de tournage", row: 3, col: 1, dir: "across" },
+          { answer: "IMAX", clue: "Format de salle géante", row: 2, col: 8, dir: "down" },
+          { answer: "COMEDIE", clue: "Genre drôle", row: 6, col: 1, dir: "across" }
         ]
       },
       {
-        title: 'Cinéma moyen 12 A',
+        title: "Cinéma moyen 12x12 A",
         size: 12,
         words: [
-          { answer: 'PROJECTION', clue: 'Diffusion en salle', row: 0, col: 1, dir: 'across' },
-          { answer: 'MARVEL', clue: 'Univers de super-héros', row: 0, col: 5, dir: 'down' },
-          { answer: 'SCENARIO', clue: 'Histoire écrite du film', row: 4, col: 1, dir: 'across' },
-          { answer: 'FX', clue: 'Effets spéciaux abrégés', row: 3, col: 9, dir: 'down' },
-          { answer: 'CASCADEUR', clue: 'Fait les scènes dangereuses', row: 8, col: 1, dir: 'across' }
+          { answer: "REALISATEUR", clue: "Dirige un film", row: 0, col: 0, dir: "across" },
+          { answer: "PIXAR", clue: "Studio d’animation connu", row: 0, col: 4, dir: "down" },
+          { answer: "SCENARIO", clue: "Histoire écrite du film", row: 3, col: 1, dir: "across" },
+          { answer: "MIXAGE", clue: "Travail sur le son", row: 2, col: 9, dir: "down" },
+          { answer: "CASCADE", clue: "Scène dangereuse", row: 8, col: 1, dir: "across" }
         ]
       }
     ],
     difficile: [
       {
-        title: 'Cinéma difficile 8 A',
-        size: 8,
-        words: [
-          { answer: 'FOLEY', clue: 'Bruitage de cinéma', row: 0, col: 1, dir: 'across' },
-          { answer: 'CGI', clue: 'Effets numériques', row: 0, col: 3, dir: 'down' },
-          { answer: 'NOLAN', clue: 'Réalisateur d’Inception', row: 4, col: 1, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Cinéma difficile 10 A',
-        size: 10,
-        words: [
-          { answer: 'NOLAN', clue: 'Réalisateur d’Inception', row: 0, col: 1, dir: 'across' },
-          { answer: 'FOLEY', clue: 'Bruitage de cinéma', row: 0, col: 3, dir: 'down' },
-          { answer: 'SEQUEL', clue: 'Suite d’un film en anglais', row: 5, col: 1, dir: 'across' }
-        ]
-      },
-      {
-        title: 'Cinéma difficile 12 A',
+        title: "Cinéma difficile 12x12 A",
         size: 12,
         words: [
-          { answer: 'DOCUMENTAIRE', clue: 'Film basé sur le réel', row: 0, col: 0, dir: 'across' },
-          { answer: 'NOLAN', clue: 'Réalisateur d’Inception', row: 0, col: 5, dir: 'down' },
-          { answer: 'FOLEY', clue: 'Bruitage de cinéma', row: 3, col: 8, dir: 'down' },
-          { answer: 'PANORAMIQUE', clue: 'Mouvement de caméra horizontal', row: 7, col: 0, dir: 'across' }
+          { answer: "DOCUMENTAIRE", clue: "Film basé sur le réel", row: 0, col: 0, dir: "across" },
+          { answer: "NOLAN", clue: "Réalisateur d’Inception", row: 0, col: 5, dir: "down" },
+          { answer: "FOLEY", clue: "Bruitage de cinéma", row: 3, col: 8, dir: "down" },
+          { answer: "PANORAMIQUE", clue: "Mouvement de caméra horizontal", row: 7, col: 0, dir: "across" }
+        ]
+      },
+      {
+        title: "Cinéma difficile 12x12 B",
+        size: 12,
+        words: [
+          { answer: "BLOCKBUSTER", clue: "Film au très grand succès", row: 0, col: 0, dir: "across" },
+          { answer: "DOUBLAGE", clue: "Voix remplacée", row: 0, col: 6, dir: "down" },
+          { answer: "PREPRODUCTION", clue: "Étape avant le tournage", row: 3, col: 0, dir: "across" },
+          { answer: "CGI", clue: "Effets numériques", row: 2, col: 9, dir: "down" }
         ]
       }
     ]
   }
 };
 
+// ================= UTILS =================
 function clonePuzzle(p) {
   return JSON.parse(JSON.stringify(p));
 }
 
 function sanitize(str) {
-  return (str || '')
+  return (str || "")
     .toUpperCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^A-Z0-9]/g, '');
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^A-Z0-9]/g, "");
 }
 
+// ================= BUILD GRID =================
 function tryBuildPuzzle(sourcePuzzle, chosenSize) {
   const puzzle = clonePuzzle(sourcePuzzle);
   const size = chosenSize;
-  const grid = Array.from({ length: size }, () => Array.from({ length: size }, () => null));
+  const grid = Array.from({ length: size }, () =>
+    Array.from({ length: size }, () => null)
+  );
 
   for (const w of puzzle.words) {
     const answer = sanitize(w.answer);
@@ -341,13 +320,15 @@ function tryBuildPuzzle(sourcePuzzle, chosenSize) {
     w.cells = [];
 
     if (w.row >= size || w.col >= size) return null;
-    if (w.dir === 'across' && w.col + len > size) return null;
-    if (w.dir === 'down' && w.row + len > size) return null;
+    if (w.dir === "across" && w.col + len > size) return null;
+    if (w.dir === "down" && w.row + len > size) return null;
 
     for (let j = 0; j < len; j++) {
-      const r = w.row + (w.dir === 'down' ? j : 0);
-      const c = w.col + (w.dir === 'across' ? j : 0);
+      const r = w.row + (w.dir === "down" ? j : 0);
+      const c = w.col + (w.dir === "across" ? j : 0);
+
       if (grid[r][c] && grid[r][c] !== answer[j]) return null;
+
       grid[r][c] = answer[j];
       w.cells.push({ r, c });
     }
@@ -355,6 +336,7 @@ function tryBuildPuzzle(sourcePuzzle, chosenSize) {
 
   let num = 1;
   const startMap = new Map();
+
   puzzle.words.forEach((w) => {
     const key = `${w.row}-${w.col}`;
     if (!startMap.has(key)) startMap.set(key, num++);
@@ -363,9 +345,11 @@ function tryBuildPuzzle(sourcePuzzle, chosenSize) {
 
   puzzle.size = size;
   puzzle.solution = grid;
+
   return puzzle;
 }
 
+// ================= PICK =================
 function pickPuzzle(category, difficulty, chosenSize) {
   const exactList = (crosswordBank[category]?.[difficulty] || [])
     .filter((p) => p.size === chosenSize)
@@ -387,20 +371,22 @@ function pickPuzzle(category, difficulty, chosenSize) {
   return null;
 }
 
+// ================= GENERATE =================
 function generateCrossword() {
-  const category = document.getElementById('cwCategory').value;
-  const difficulty = document.getElementById('cwDifficulty').value;
-  const chosenSize = Number(document.getElementById('cwSize').value);
+  const category = document.getElementById("cwCategory").value;
+  const difficulty = document.getElementById("cwDifficulty").value;
+  const chosenSize = Number(document.getElementById("cwSize").value);
 
   const puzzle = pickPuzzle(category, difficulty, chosenSize);
 
   if (!puzzle) {
-    document.getElementById('cwGrid').innerHTML = '';
-    document.getElementById('cwClues').innerHTML = '';
-    document.getElementById('cwFeedback').innerHTML = '<span class="bad">Aucune grille compatible.</span>';
-    document.getElementById('cwProgressLabel').textContent = '0%';
-    document.getElementById('cwProgressBar').style.width = '0%';
-    document.getElementById('cwGridScore').textContent = '0';
+    document.getElementById("cwGrid").innerHTML = "";
+    document.getElementById("cwClues").innerHTML = "";
+    document.getElementById("cwFeedback").innerHTML =
+      '<span class="bad">Aucune grille compatible.</span>';
+    document.getElementById("cwProgressLabel").textContent = "0%";
+    document.getElementById("cwProgressBar").style.width = "0%";
+    document.getElementById("cwGridScore").textContent = "0";
     return;
   }
 
@@ -412,21 +398,26 @@ function generateCrossword() {
 
   renderCrossword();
   updateCrosswordProgress();
-  document.getElementById('cwFeedback').innerHTML = `<span class="good">Nouvelle grille générée en ${puzzle.size}x${puzzle.size}.</span>`;
+
+  document.getElementById("cwFeedback").innerHTML =
+    `<span class="good">Nouvelle grille générée en ${puzzle.size}x${puzzle.size}.</span>`;
 }
 
+// ================= RENDER =================
 function renderCrossword() {
   const puzzle = crosswordState.puzzle;
   if (!puzzle) return;
 
-  const gridEl = document.getElementById('cwGrid');
-  const cluesEl = document.getElementById('cwClues');
+  const gridEl = document.getElementById("cwGrid");
+  const cluesEl = document.getElementById("cwClues");
 
-  gridEl.innerHTML = '';
-  cluesEl.innerHTML = '';
+  gridEl.innerHTML = "";
+  cluesEl.innerHTML = "";
   gridEl.style.gridTemplateColumns = `repeat(${puzzle.size}, 1fr)`;
 
-  crosswordState.cells = Array.from({ length: puzzle.size }, () => Array.from({ length: puzzle.size }, () => null));
+  crosswordState.cells = Array.from({ length: puzzle.size }, () =>
+    Array.from({ length: puzzle.size }, () => null)
+  );
 
   const numberMap = {};
   puzzle.words.forEach((w) => {
@@ -435,42 +426,42 @@ function renderCrossword() {
 
   for (let r = 0; r < puzzle.size; r++) {
     for (let c = 0; c < puzzle.size; c++) {
-      const wrap = document.createElement('div');
-      wrap.className = 'cw-cell-wrap';
+      const wrap = document.createElement("div");
+      wrap.className = "cw-cell-wrap";
 
       if (puzzle.solution[r][c]) {
-        const input = document.createElement('input');
-        input.className = 'cw-cell';
+        const input = document.createElement("input");
+        input.className = "cw-cell";
         input.maxLength = 1;
         input.dataset.r = r;
         input.dataset.c = c;
 
-        input.addEventListener('input', (e) => {
+        input.addEventListener("input", (e) => {
           e.target.value = sanitize(e.target.value).slice(0, 1);
           if (e.target.value) moveToNextCell(r, c);
           updateCrosswordProgress();
         });
 
-        input.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowUp') focusCell(r - 1, c);
-          else if (e.key === 'ArrowDown') focusCell(r + 1, c);
-          else if (e.key === 'ArrowLeft') focusCell(r, c - 1);
-          else if (e.key === 'ArrowRight') focusCell(r, c + 1);
-          else if (e.key === 'Backspace' && !e.target.value) moveToPreviousCell(r, c);
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowUp") focusCell(r - 1, c);
+          else if (e.key === "ArrowDown") focusCell(r + 1, c);
+          else if (e.key === "ArrowLeft") focusCell(r, c - 1);
+          else if (e.key === "ArrowRight") focusCell(r, c + 1);
+          else if (e.key === "Backspace" && !e.target.value) moveToPreviousCell(r, c);
         });
 
         wrap.appendChild(input);
         crosswordState.cells[r][c] = input;
 
         if (numberMap[`${r}-${c}`]) {
-          const num = document.createElement('span');
-          num.className = 'cw-number';
+          const num = document.createElement("span");
+          num.className = "cw-number";
           num.textContent = numberMap[`${r}-${c}`];
           wrap.appendChild(num);
         }
       } else {
-        const block = document.createElement('div');
-        block.className = 'cw-block';
+        const block = document.createElement("div");
+        block.className = "cw-block";
         wrap.appendChild(block);
       }
 
@@ -478,26 +469,28 @@ function renderCrossword() {
     }
   }
 
-  const info = document.createElement('div');
-  info.className = 'note';
-  info.style.marginBottom = '12px';
+  const info = document.createElement("div");
+  info.className = "note";
+  info.style.marginBottom = "12px";
   info.textContent = `Grille : ${puzzle.title} — ${puzzle.size}x${puzzle.size}`;
   cluesEl.appendChild(info);
 
-  ['across', 'down'].forEach((dir) => {
-    const title = dir === 'across' ? 'Horizontal' : 'Vertical';
-    const group = document.createElement('div');
-    group.className = 'clue-group';
+  ["across", "down"].forEach((dir) => {
+    const title = dir === "across" ? "Horizontal" : "Vertical";
+    const group = document.createElement("div");
+    group.className = "clue-group";
     group.innerHTML = `<h3 style="margin-bottom:10px;">${title}</h3>`;
 
-    puzzle.words.filter((w) => w.dir === dir).forEach((w) => {
-      const div = document.createElement('div');
-      div.className = 'clue-item';
-      div.innerHTML = `<strong>${w.number}.</strong> ${w.clue} <span class="small">(${w.answer.length} lettres)</span>`;
-      div.style.cursor = 'pointer';
-      div.onclick = () => focusWord(puzzle.words.indexOf(w));
-      group.appendChild(div);
-    });
+    puzzle.words
+      .filter((w) => w.dir === dir)
+      .forEach((w) => {
+        const div = document.createElement("div");
+        div.className = "clue-item";
+        div.innerHTML = `<strong>${w.number}.</strong> ${w.clue} <span class="small">(${w.answer.length} lettres)</span>`;
+        div.style.cursor = "pointer";
+        div.onclick = () => focusWord(puzzle.words.indexOf(w));
+        group.appendChild(div);
+      });
 
     cluesEl.appendChild(group);
   });
@@ -505,10 +498,13 @@ function renderCrossword() {
   focusWord(0);
 }
 
+// ================= NAV =================
 function focusWord(index) {
   const word = crosswordState.puzzle?.words[index];
   crosswordState.selectedWordIndex = index;
-  if (word && word.cells.length) focusCell(word.cells[0].r, word.cells[0].c);
+  if (word && word.cells.length) {
+    focusCell(word.cells[0].r, word.cells[0].c);
+  }
 }
 
 function focusCell(r, c) {
@@ -520,7 +516,7 @@ function focusCell(r, c) {
 }
 
 function moveToNextCell(r, c) {
-  const word = crosswordState.puzzle?.words[crosswordState.selectedWordIndex];
+  const word = crosswordState.puzzle.words[crosswordState.selectedWordIndex];
   if (word) {
     const idx = word.cells.findIndex((pos) => pos.r === r && pos.c === c);
     if (idx >= 0 && idx < word.cells.length - 1) {
@@ -528,6 +524,7 @@ function moveToNextCell(r, c) {
       return;
     }
   }
+
   for (let i = r; i < crosswordState.cells.length; i++) {
     for (let j = i === r ? c + 1 : 0; j < crosswordState.cells[i].length; j++) {
       if (crosswordState.cells[i][j]) {
@@ -549,34 +546,49 @@ function moveToPreviousCell(r, c) {
   }
 }
 
-function updateCrosswordProgress() {
+// ================= PROGRESS =================
+function getCrosswordFilledCount() {
   const puzzle = crosswordState.puzzle;
-  if (!puzzle) return;
-
   let total = 0;
   let filled = 0;
+
   for (let r = 0; r < puzzle.size; r++) {
     for (let c = 0; c < puzzle.size; c++) {
       if (puzzle.solution[r][c]) {
         total++;
-        if (crosswordState.cells[r][c]?.value) filled++;
+        if (crosswordState.cells[r][c] && crosswordState.cells[r][c].value) {
+          filled++;
+        }
       }
     }
   }
 
-  const percent = total ? Math.round((filled / total) * 100) : 0;
-  document.getElementById('cwProgressLabel').textContent = percent + '%';
-  document.getElementById('cwProgressBar').style.width = percent + '%';
-  document.getElementById('cwGridScore').textContent = crosswordState.score;
+  return { total, filled };
 }
 
+function updateCrosswordProgress() {
+  const puzzle = crosswordState.puzzle;
+  if (!puzzle) return;
+
+  const { total, filled } = getCrosswordFilledCount();
+  const percent = total ? Math.round((filled / total) * 100) : 0;
+
+  document.getElementById("cwProgressLabel").textContent = percent + "%";
+  document.getElementById("cwProgressBar").style.width = percent + "%";
+  document.getElementById("cwGridScore").textContent = crosswordState.score;
+}
+
+// ================= CHECK =================
 function clearCellStyles() {
   const puzzle = crosswordState.puzzle;
   if (!puzzle) return;
+
   for (let r = 0; r < puzzle.size; r++) {
     for (let c = 0; c < puzzle.size; c++) {
       const cell = crosswordState.cells[r][c];
-      if (cell) cell.classList.remove('correct', 'wrong', 'hint', 'reveal');
+      if (cell) {
+        cell.classList.remove("correct", "wrong", "hint", "reveal");
+      }
     }
   }
 }
@@ -593,12 +605,16 @@ function checkCrossword() {
     for (let c = 0; c < puzzle.size; c++) {
       const sol = puzzle.solution[r][c];
       const cell = crosswordState.cells[r][c];
+
       if (sol && cell) {
         const val = sanitize(cell.value);
+
         if (!val) complete = false;
-        if (val === sol) cell.classList.add('correct');
-        else {
-          if (val) cell.classList.add('wrong');
+
+        if (val === sol) {
+          cell.classList.add("correct");
+        } else {
+          if (val) cell.classList.add("wrong");
           wrong++;
           complete = false;
         }
@@ -611,37 +627,49 @@ function checkCrossword() {
       crosswordState.solved = true;
       const bonus = 100 + Math.max(0, 60 - crosswordState.score);
       crosswordState.score += bonus;
-      appState.scores.crossword += 1;
-      appState.scores.total += crosswordState.score;
-      saveScores();
+
+      if (window.appState?.scores) {
+        window.appState.scores.crossword += 1;
+        window.appState.scores.total += crosswordState.score;
+      }
+
+      if (typeof saveScores === "function") saveScores();
+      if (typeof renderStats === "function") renderStats();
     }
-    document.getElementById('cwFeedback').innerHTML = `<span class="good">Bravo, grille terminée ! +${crosswordState.score} points</span>`;
-    if (typeof beep === 'function') beep(700, 0.12, 'triangle', 0.03);
+
+    document.getElementById("cwFeedback").innerHTML =
+      `<span class="good">Bravo, grille terminée ! +${crosswordState.score} points</span>`;
   } else {
-    document.getElementById('cwFeedback').innerHTML = `<span class="warnText">Il reste ${wrong} erreur(s) ou des cases vides.</span>`;
-    if (typeof beep === 'function') beep(220, 0.07, 'square', 0.015);
+    document.getElementById("cwFeedback").innerHTML =
+      `<span class="warnText">Il reste ${wrong} erreur(s) ou des cases vides.</span>`;
   }
 
   updateCrosswordProgress();
 }
 
+// ================= HELPERS =================
 function giveLetterHint() {
   const puzzle = crosswordState.puzzle;
   if (!puzzle || crosswordState.solved) return;
 
-  const remaining = [];
+  const empties = [];
+
   for (let r = 0; r < puzzle.size; r++) {
     for (let c = 0; c < puzzle.size; c++) {
-      if (puzzle.solution[r][c] && sanitize(crosswordState.cells[r][c].value) !== puzzle.solution[r][c]) {
-        remaining.push({ r, c });
+      if (
+        puzzle.solution[r][c] &&
+        sanitize(crosswordState.cells[r][c].value) !== puzzle.solution[r][c]
+      ) {
+        empties.push({ r, c });
       }
     }
   }
 
-  if (!remaining.length) return;
-  const pick = remaining[Math.floor(Math.random() * remaining.length)];
+  if (!empties.length) return;
+
+  const pick = empties[Math.floor(Math.random() * empties.length)];
   crosswordState.cells[pick.r][pick.c].value = puzzle.solution[pick.r][pick.c];
-  crosswordState.cells[pick.r][pick.c].classList.add('hint');
+  crosswordState.cells[pick.r][pick.c].classList.add("hint");
   crosswordState.score = Math.max(0, crosswordState.score - 4);
   updateCrosswordProgress();
 }
@@ -655,11 +683,14 @@ function revealWord() {
   );
 
   if (!remainingWords.length) return;
+
   const word = remainingWords[Math.floor(Math.random() * remainingWords.length)];
+
   word.cells.forEach((pos) => {
     crosswordState.cells[pos.r][pos.c].value = puzzle.solution[pos.r][pos.c];
-    crosswordState.cells[pos.r][pos.c].classList.add('reveal');
+    crosswordState.cells[pos.r][pos.c].classList.add("reveal");
   });
+
   crosswordState.score = Math.max(0, crosswordState.score - 12);
   updateCrosswordProgress();
 }
@@ -667,17 +698,28 @@ function revealWord() {
 function clearWrongCells() {
   const puzzle = crosswordState.puzzle;
   if (!puzzle) return;
+
   for (let r = 0; r < puzzle.size; r++) {
     for (let c = 0; c < puzzle.size; c++) {
       const sol = puzzle.solution[r][c];
       const cell = crosswordState.cells[r][c];
-      if (sol && cell && cell.value && sanitize(cell.value) !== sol) cell.value = '';
-      if (cell) cell.classList.remove('wrong');
+
+      if (sol && cell && cell.value && sanitize(cell.value) !== sol) {
+        cell.value = "";
+      }
+
+      if (cell) {
+        cell.classList.remove("wrong");
+      }
     }
   }
+
   updateCrosswordProgress();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('cwGrid')) generateCrossword();
+// ================= INIT =================
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("cwGrid")) {
+    generateCrossword();
+  }
 });

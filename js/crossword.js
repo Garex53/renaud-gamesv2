@@ -351,21 +351,29 @@ function tryBuildPuzzle(sourcePuzzle, chosenSize) {
 
 // ================= PICK =================
 function pickPuzzle(category, difficulty, chosenSize) {
-  const exactList = (crosswordBank[category]?.[difficulty] || [])
-    .filter((p) => p.size === chosenSize)
-    .map((p) => tryBuildPuzzle(p, chosenSize))
+  const categoryData = crosswordBank[category];
+  if (!categoryData) return null;
+
+  const difficultyData = categoryData[difficulty];
+  if (!difficultyData || !difficultyData.length) return null;
+
+  // 1) priorité à la taille exacte
+  let list = difficultyData
+    .filter(p => Number(p.size) === Number(chosenSize))
+    .map(p => tryBuildPuzzle(p, Number(p.size)))
     .filter(Boolean);
 
-  if (exactList.length) {
-    return exactList[Math.floor(Math.random() * exactList.length)];
+  if (list.length) {
+    return list[Math.floor(Math.random() * list.length)];
   }
 
-  const fallbackList = (crosswordBank[category]?.[difficulty] || [])
-    .map((p) => tryBuildPuzzle(p, p.size))
+  // 2) sinon on prend n'importe quelle grille valide de la même difficulté
+  list = difficultyData
+    .map(p => tryBuildPuzzle(p, Number(p.size)))
     .filter(Boolean);
 
-  if (fallbackList.length) {
-    return fallbackList[Math.floor(Math.random() * fallbackList.length)];
+  if (list.length) {
+    return list[Math.floor(Math.random() * list.length)];
   }
 
   return null;
